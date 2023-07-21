@@ -16,7 +16,7 @@ const Content = () => {
     }
     const getData = async () => {
         try {
-          const res = await axios.request(option)
+          const res = await axios(option)
           setIp(res.data)
         } catch (error) {
           window.alert("API Error! Please try again later.")
