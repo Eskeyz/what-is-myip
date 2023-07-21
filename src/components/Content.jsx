@@ -15,8 +15,12 @@ const Content = () => {
         }
     }
     const getData = async () => {
-        const res = await axios.request(option)
-        setIp(res.data)
+        try {
+          const res = await axios.request(option)
+          setIp(res.data)
+        } catch (error) {
+          window.alert("API Error! Please try again later.")
+        }
     }
     useEffect(() => {
         getData()
